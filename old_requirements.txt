@@ -1,0 +1,10 @@
+dj-database-url
+Django
+django-heroku #(includes whitenoise (which is also in dj-database-url) and psycopg2)
+gunicorn
+python-decouple
+pytz
+sqlparse
+whitenoise
+psycopg2
+
