@@ -76,25 +76,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
     }
 }
 
-DATABASE_URI = 'postgres://ryatgtibmfhcsu:098367d7ca2fd2d079775e5e3268a969774dea002e4ec5f2bd6d3c29ad747d7e@ec2-35-175-155-248.compute-1.amazonaws.com:5432/dc4anhef5vd2a1'
-
-DATABASES['default'] = dj_database_url.config(default=DATABASE_URI)
+DATABASES['default'] = dj_database_url.config(default='postgres://ryatgtibmfhcsu:098367d7ca2fd2d079775e5e3268a969774dea002e4ec5f2bd6d3c29ad747d7e@ec2-35-175-155-248.compute-1.amazonaws.com:5432/dc4anhef5vd2a1')
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 
