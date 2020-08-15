@@ -4,8 +4,11 @@ from .forms import AddressForm
 from django.contrib import messages
 
 def home(request):
+	return render(request, 'home.html', {})
+
+def addresses(request):
 	all_addresses = Address.objects.all
-	return render(request, 'home.html', {'all_addresses' : all_addresses})
+	return render(request, 'addresses.html', {'all_addresses' : all_addresses})
 
 def add_address(request):
 	if request.method == 'POST':

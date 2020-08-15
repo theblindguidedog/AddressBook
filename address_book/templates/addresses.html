@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Addresses{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+	<div class="row">
+
+	{% if all_addresses %}
+
+		{% for records in all_addresses %}
+
+		<div class="card" style="width: 15rem;">	
+	  		<div class="card-body">
+	    		<h5 class="card-title">{{ records.name }}</h5>
+	    		<p class="card-text">
+	    			<!--<img src="..." class="card-img-top" alt="...">-->
+	    			{{ records.name }}<br/>
+					{{ records.email }}<br/>
+					{{ records.phone }}<br/>
+					{{ records.address }}<br/>
+					{{ records.city }}<br/>
+					{{ records.state }}<br/>
+					{{ records.postcode }}<br/>
+	    		</p>
+	    		<a href="{% url 'edit' records.id %}" class="btn btn-secondary">Edit</a>
+	  		</div>
+
+		</div>
+		
+		{% endfor %}
+
+	{% endif %}
+
+		<div class="card" style="width: 15rem;">
+			<div class="card-body">
+				<p class="card-text">
+					<a href="{% url 'add_address' %}">Add Address...</a>
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<br/><br/>
+
+{% endblock %}
