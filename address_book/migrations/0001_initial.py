@@ -22,7 +22,6 @@ class Migration(migrations.Migration):
                 ('city', models.CharField(max_length=200)),
                 ('state', models.CharField(max_length=100)),
                 ('postcode', models.CharField(max_length=10)),
-                ('comments', models.CharField(max_length=2000, null=True)),
             ],
         ),
     ]
